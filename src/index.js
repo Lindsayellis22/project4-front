@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Test from '/Users/lindsayellis/SEI/projects/project4-front/project4-front/src/components/Test.js'
+
 
 ReactDOM.render(
   <React.StrictMode>
