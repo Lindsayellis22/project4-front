@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import Radclyf from './Radclyf';
-import PetForm from '/Users/lindsayellis/SEI/projects/project4-front/project4-front/src/components/PetForm.js'
+import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js';
+import { Link } from 'react-router-dom';
 
 
 function Home(props) {   
@@ -22,19 +22,18 @@ function Home(props) {
       
         if (loading) {return <h1>Loading...</h1>};
 
-    function handleSubmit(event) {
-            event.preventDefault();
-        }
+    // function handleSubmit(event) {
+    //         event.preventDefault();
+    //     }
 
-        function handleChange(event) {
-            setColor(event.target.value);
-        }
+    //     function handleChange(event) {
+    //         setColor(event.target.value);
+    //     }
 
     return (
         
         <div>
-            <PetForm  />
-            <Radclyf />
+        <Link to='/species/id'><Radclyf /></Link>
             <TestHeading>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quam dolorum corrupti consectetur sunt temporibus suscipit doloribus debitis, fugit nobis ipsa, omnis quas qui dignissimos dolorem! Voluptate possimus consectetur officiis!</TestHeading>
             <ul>
                 {species.map(speciespets => (

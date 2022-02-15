@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function PetForm(props) {
-    const navigate = useNavigate();
     const [pet, setPets] = useState({
     name: '',
     color: '',
