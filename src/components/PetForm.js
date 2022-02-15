@@ -1,19 +1,28 @@
+import { green } from '@mui/material/colors';
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+const COLOR_ARRAY = ['papayawhip', 'lemonchiffon', 'hotpink'];
+
 
 function PetForm(props) {
-    const [pet, setPets] = useState({
-    name: '',
-    color: '',
-});
+    const [pet, setPet] = useState({
+        name: '',
+        color: '',
+        species_id: props.speciesId,
+    });
 
     const handleChange = (event) => {
 		event.preventDefault();
-		setPets({ ...pet, [event.target.id]: event.target.value });
+		setPet({ ...pet, [event.target.id]: event.target.value });
+        if (event.target.id === 'color') {
+            props.setColor(event.target.value);
+        };
 	};
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         fetch('http://localhost:3111/pets', {
                 method: 'POST',
                 body: JSON.stringify(pet),
@@ -30,24 +39,33 @@ function PetForm(props) {
     }
 
     return (
+    <div>
         <form onSubmit={handleSubmit} className='create-form'>
-			<label htmlFor='flavor'>Name: </label>
+			<label htmlFor='name'>Name: </label>
 			<input
+                type='text'
 				onChange={handleChange}
 				id='name'
 				value={pet.name}
-				placeholder='Pet'
+				placeholder='Pet Name'
 			/>
-			<label htmlFor='varieties'>Color: </label>
-			<input
-				onChange={handleChange}
-				id='color'
-				value={pet.color}
-				placeholder='Color'
-			/>
-			<button type='submit'>Submit</button>
-		</form>
+            <label>Choose a Color:</label>
+          <select value={props.color} id='color' onChange={handleChange}> 
+            <option value='default' disabled hidden>
+              Color 
+            </option>
+            {COLOR_ARRAY.map((color) => {
+              return (
+                <option value={color} key={color}>{color}</option>
+              )
+            })}
+          </select>
+            <button type='submit'>Submit</button>
+            </form>
+    </div>
     );    
-}
+ }
+
+
 
 export default PetForm;
