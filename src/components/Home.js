@@ -26,26 +26,29 @@ function Home(props) {
                 <TestHeading>adopt pets!</TestHeading>
                 <SpeciesList>
                     {speciesList.map(species => (
-                        <Link to={`/species/${species._id}`} key={species._id}>
+                        <StyledLink to={`/species/${species._id}`} key={species._id}>
                             <SpeciesListItem >
-                                <TestSpecies />
-                                {species.speciesName}
+                                <SpeciesContainer>
+                                    {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
+                                    {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
+                                </SpeciesContainer>
+                                <LinkText>{species.speciesName}</LinkText>
                             </SpeciesListItem>
-                        </Link>
+                        </StyledLink>
                     ))}
                 </SpeciesList>
         </div>
     );
 }
 
-const TestSpecies = styled.div`
-    background-color: aqua;
-    height: 100px;
-    width: 100px;
+const SpeciesContainer = styled.div`
+    height: 200px;
+    width: 200px;
+    position: relative;
 `
 
 const TestHeading = styled.h1`
-    color: #003566;
+    color: #000814;
     font-family: 'Special Elite', cursive;
 `
 const SpeciesList = styled.ul`
@@ -53,24 +56,25 @@ const SpeciesList = styled.ul`
     flex-wrap: wrap;
     list-style-type: none;
 `
+const LinkText = styled.p`
+    color: #000814;
+`
+const StyledLink = styled(Link)`
+    text-decoration: none;
+`
 const SpeciesListItem = styled.li`
     padding: 10px;
     border-radius: 6px;
     border-color: gray;
     background-color: white;
-    margin-right: 10px;
-`
-const HomeCard = styled.div`
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 200px;
     display: flex;
-    flex-direction: row;
-    background-color: white;
-	padding: 20px;
-	margin-top: 50px;
-	margin-left: 200px;
-	margin-right: 200px;
+    flex-direction: column;
+    justify-content: space-around;
 `
 
 export default Home;
 
-// {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
-// {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
+

@@ -59,7 +59,9 @@ function PetForm(props) {
                 )
               })}
           </select>
+          <Link to={'/pets'}>
             <button type='submit'>Submit</button>
+          </Link>
         </form>
     </div>
     );    

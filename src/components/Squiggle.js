@@ -20,22 +20,9 @@ function Squiggle(props) {
     );
 }
 
-const SquiggleContainer = styled.div`
-  position: fixed;
-  border: 4px solid rgb(204, 189, 189);
-	background-color: var(--transparent-grey);
-	margin: 1rem;
-	margin-top: 30px;
-	width: 91vw;
-	padding: 5px;
-	display: flex;
-	align-content: center;
-	flex-direction: column;
-	overflow-x: hidden;    
-`
 
 const Head = styled.div`
-    position: fixed;
+    position: absolute;
     top: 16%;
     left: 25%;
     width: 50%;
@@ -46,7 +33,7 @@ const Head = styled.div`
   `
   
   const RightEar = styled.div`
-    position: fixed;
+    position: absolute;
     width: 10%;
     height: 25%;
     right: 25%;
@@ -58,7 +45,7 @@ const Head = styled.div`
    `
 
    const LeftEar = styled.div`
-    position: fixed;
+    position: absolute;
     width: 10%;
     height: 25%;
     left: 25%;
@@ -70,7 +57,7 @@ const Head = styled.div`
    `
   
   const LeftInnerEar = styled.div`
-    position: fixed;
+    position: absolute;
     width: 7%;
     height: 12%;
     left: 25%;
@@ -82,7 +69,7 @@ const Head = styled.div`
   `
 
   const RightInnerEar = styled.div`
-    position: fixed;
+    position: absolute;
     width: 7%;
     height: 12%;
     right: 25%;
@@ -94,7 +81,7 @@ const Head = styled.div`
   `
   
   const Eye = styled.div`
-    position: fixed;
+    position: absolute;
     top: 37%;
     ${props => props.left && 'left: 37%;'}
     ${props => props.right && 'right: 37%;'}
@@ -108,7 +95,7 @@ const Head = styled.div`
   `
   
   const Mouth = styled.div`
-    position: fixed;
+    position: absolute;
     top: 55%;
     right: 45%;
     width: 10%;
@@ -120,7 +107,7 @@ const Head = styled.div`
   `
   
   const RightLeg = styled.div`
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
@@ -131,7 +118,7 @@ const Head = styled.div`
   `
   
   const LeftLeg = styled.div`
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
@@ -142,7 +129,7 @@ const Head = styled.div`
   `
   
   const MiddleLeg = styled.div`
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;

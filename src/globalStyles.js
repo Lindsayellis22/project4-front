@@ -5,6 +5,6 @@ body {
     margin: 0;
     padding: 0;
     background: #ffc300;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Staatliches', cursive;;
 `
 export default GlobalStyle;
