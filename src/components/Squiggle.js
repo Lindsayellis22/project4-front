@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Squiggle(props) {
     return (
-        <SquiggleContainer>
+        <>
             <Head color={props.color}></Head>
             <RightEar color={props.color}></RightEar>
             <LeftEar color={props.color}></LeftEar>
@@ -16,12 +16,22 @@ function Squiggle(props) {
             <LeftLeg></LeftLeg>
             <MiddleLeg right></MiddleLeg> 
             <MiddleLeg left></MiddleLeg>  
-        </SquiggleContainer>
+        </>
     );
 }
 
 const SquiggleContainer = styled.div`
-    
+  position: relative;
+  border: 4px solid rgb(204, 189, 189);
+	background-color: var(--transparent-grey);
+	margin: 1rem;
+	margin-top: 30px;
+	width: 91vw;
+	padding: 5px;
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	overflow-x: hidden;    
 `
 
 const Head = styled.div`
@@ -30,7 +40,7 @@ const Head = styled.div`
     left: 25%;
     width: 50%;
     height: 60%;
-    background: thistle;
+    background: ${props => props.color};
     border-radius: 50%;
     z-index: 3;
   `
@@ -41,7 +51,7 @@ const Head = styled.div`
     height: 25%;
     right: 25%;
     top: 5%;
-    background: thistle;
+    background: ${props => props.color};
     border-radius: 50%;
     transform: rotate(-160deg);
     z-index: 1;
@@ -53,7 +63,7 @@ const Head = styled.div`
     height: 25%;
     left: 25%;
     top: 5%;
-    background: thistle;
+    background: ${props => props.color};
     border-radius: 50%;
     transform: rotate(160deg);
     z-index: 1;

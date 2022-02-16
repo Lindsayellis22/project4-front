@@ -1,6 +1,7 @@
 import { green } from '@mui/material/colors';
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const COLOR_ARRAY = ['papayawhip', 'lemonchiffon', 'hotpink'];
@@ -60,7 +61,7 @@ function PetForm(props) {
               )
             })}
           </select>
-            <button type='submit'>Submit</button>
+          <Link to={`/pets`}><button type='submit'>Submit</button></Link>
             </form>
     </div>
     );    

@@ -7,41 +7,64 @@ import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/com
 
 
 function Home(props) {   
-    const [species, setSpecies] = useState([]);
+    const [speciesList, setSpeciesList] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [color, setColor] = useState('default');
-
+    
     useEffect(() => {
         
         fetch('http://localhost:3111/species')
             .then((res) => res.json())
             .then((res) => {
-                setSpecies(res);
+                setSpeciesList(res);
                 setLoading(false);
             }).catch((err) => console.error(`Oops, something went wrong: ${err}`));
-        }, []);
+    }, []);
       
         if (loading) {return <h1>Loading...</h1>};
 
     return (
-        
         <div>
-        <Link to={`/species/620801bcd7fd58ae0f5da2ba`}><Radclyf /></Link>
-        <Link to={`/species/620801bcd7fd58ae0f5da2b9`}><Squiggle /></Link>
             <TestHeading>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quam dolorum corrupti consectetur sunt temporibus suscipit doloribus debitis, fugit nobis ipsa, omnis quas qui dignissimos dolorem! Voluptate possimus consectetur officiis!</TestHeading>
-            <ul>
-                {species.map(speciespets => (
-                    <li key={speciespets.id}>
-                        {speciespets.speciesName} {speciespets.defaultColor}
-                    </li>
+            <SpeciesList>
+                {speciesList.map(species => (
+                    <Link to={`/species/${species._id}`}>
+                        <SpeciesListItem key={species._id}>
+                            {species.speciesName}
+                            {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
+                            {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
+                        </SpeciesListItem>
+                    </Link>
                 ))}
-            </ul>
+            </SpeciesList>
         </div>
     );
-  }
+}
 
 const TestHeading = styled.h1`
     color: red
+`
+const SpeciesCard = styled.div`
+    poition: relative;  
+    border: 4px solid rgb(204, 189, 189);
+	background-color: var(--transparent-grey);
+	margin: 1rem;
+	margin-top: 30px;
+	width: 91vw;
+	padding: 5px;
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	overflow-x: hidden;
+`
+const SpeciesList = styled.ul`
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	padding-left: 1rem;
+`
+const SpeciesListItem = styled.li`
+    list-style-type: none;
 `
 
 export default Home;
