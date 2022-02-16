@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav.js';
 import Home from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Home.js';
-import CreatePet from './components/CreatePet.js'
+import CreatePet from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/CreatePet.js'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       </header>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/species/:id' element={ <CreatePet />} />
+        <Route path='/species/:id' element={<CreatePet />} />
       </Routes>
     </div>
   );

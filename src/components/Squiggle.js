@@ -5,15 +5,17 @@ function Squiggle(props) {
     return (
         <SquiggleContainer>
             <Head color={props.color}></Head>
-            <Ear left color={props.color}></Ear>
-            <Ear right color={props.color}></Ear>
-            <InnerEar right></InnerEar>
-            <InnerEar left></InnerEar>
+            <RightEar color={props.color}></RightEar>
+            <LeftEar color={props.color}></LeftEar>
+            <RightInnerEar></RightInnerEar>
+            <LeftInnerEar></LeftInnerEar>
             <Eye right></Eye>
             <Eye left></Eye>
             <Mouth></Mouth>
             <RightLeg></RightLeg>
-            <LeftLeg></LeftLeg>   
+            <LeftLeg></LeftLeg>
+            <MiddleLeg right></MiddleLeg> 
+            <MiddleLeg left></MiddleLeg>  
         </SquiggleContainer>
     );
 }
@@ -28,34 +30,56 @@ const Head = styled.div`
     left: 25%;
     width: 50%;
     height: 60%;
-    background: tomato;
+    background: thistle;
     border-radius: 50%;
     z-index: 3;
   `
   
-  const Ear = styled.div`
+  const RightEar = styled.div`
     position: absolute;
     width: 10%;
     height: 25%;
-    ${props => props.left && 'left: 25%;'}
-    ${props => props.right && 'right: 25%;'}
+    right: 25%;
     top: 5%;
-    background: tomato;
+    background: thistle;
     border-radius: 50%;
     transform: rotate(-160deg);
     z-index: 1;
    `
+
+   const LeftEar = styled.div`
+    position: absolute;
+    width: 10%;
+    height: 25%;
+    left: 25%;
+    top: 5%;
+    background: thistle;
+    border-radius: 50%;
+    transform: rotate(160deg);
+    z-index: 1;
+   `
   
-  const InnerEar = styled.div`
+  const LeftInnerEar = styled.div`
     position: absolute;
     width: 7%;
     height: 12%;
-    ${props => props.left && 'left: 25%;'}
-    ${props => props.right && 'right: 25%;'}
+    left: 25%;
     top: 10%;
     background: pink;
     border-radius: 50%;
     transform: rotate(160deg);
+    z-index: 3;
+  `
+
+  const RightInnerEar = styled.div`
+    position: absolute;
+    width: 7%;
+    height: 12%;
+    right: 25%;
+    top: 10%;
+    background: pink;
+    border-radius: 50%;
+    transform: rotate(-160deg);
     z-index: 3;
   `
   
@@ -90,7 +114,7 @@ const Head = styled.div`
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: tomato;
+    background-color: thistle;
     top: 57%;
     right: 30%;
     transform: rotate(-20deg);
@@ -101,30 +125,21 @@ const Head = styled.div`
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: tomato;
+    background-color: thistle;
     top: 57%;
     left: 30%;
     transform: rotate(20deg);
   `
   
-  .middle-rightleg {
+  const MiddleLeg = styled.div`
     position: absolute;
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: tomato;
+    background-color: thistle;
     top: 59%;
-    left: 51%;
-  }
+    ${props => props.left && 'left: 51%;'}
+    ${props => props.right && 'right: 51%;'}
+  `
   
-  .middle-leftleg {
-    position: absolute;
-    width: 100px;
-    height: 150px;
-    border-radius: 100px /         50px;
-    background-color: tomato;
-    top: 59%;
-    right: 51%;
-  }
-
-export default Squiggle;
+  export default Squiggle;

@@ -3,12 +3,15 @@ import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/comp
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import PetForm from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/PetForm.js'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
+import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
 
-// const RADCLYF_ID = '620801bcd7fd58ae0f5da2ba';
+
 
 function CreatePet(props) {
-    let { id } = useParams();
+    const { id } = useParams();
+
+    
 
     const [species, setSpecies] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,15 +29,15 @@ function CreatePet(props) {
         },[id]);
       
         if (loading) {return <h1>Loading...</h1>};
+        
     return (
         <div>
-            {/* TO DO: CONDITION FOR SHOWING PET SPECIES */}
             <Radclyf color={color} />
+  
             <PetForm speciesId={id} setColor={setColor} />
         </div>
-    );
-}
+    
 
+) }
 
-
-export default CreatePet;
+export default CreatePet
