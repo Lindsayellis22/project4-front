@@ -10,8 +10,7 @@ function Home(props) {
     const [speciesList, setSpeciesList] = useState([]);
     const [loading, setLoading] = useState(true);
     
-    useEffect(() => {
-        
+    useEffect(() => { 
         fetch('http://localhost:3111/species')
             .then((res) => res.json())
             .then((res) => {
@@ -24,43 +23,54 @@ function Home(props) {
 
     return (
         <div>
-            <TestHeading>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quam dolorum corrupti consectetur sunt temporibus suscipit doloribus debitis, fugit nobis ipsa, omnis quas qui dignissimos dolorem! Voluptate possimus consectetur officiis!</TestHeading>
-            <SpeciesList>
-                {speciesList.map(species => (
-                    <Link to={`/species/${species._id}`}>
-                        <SpeciesListItem key={species._id}>
-                            {species.speciesName}
-                            {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
-                            {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
-                        </SpeciesListItem>
-                    </Link>
-                ))}
-            </SpeciesList>
+                <TestHeading>adopt pets!</TestHeading>
+                <SpeciesList>
+                    {speciesList.map(species => (
+                        <Link to={`/species/${species._id}`} key={species._id}>
+                            <SpeciesListItem >
+                                <TestSpecies />
+                                {species.speciesName}
+                            </SpeciesListItem>
+                        </Link>
+                    ))}
+                </SpeciesList>
         </div>
     );
 }
 
-const TestHeading = styled.h1`
-    font-color: red
-    font-family: 'Special Elite', cursive;
+const TestSpecies = styled.div`
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
 `
 
+const TestHeading = styled.h1`
+    color: #003566;
+    font-family: 'Special Elite', cursive;
+`
 const SpeciesList = styled.ul`
-    display: grid;
-    margin: 0;
-    norder-radius: 5px;
-    padding: 20px;
-    font-size 150%
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
 `
 const SpeciesListItem = styled.li`
+    padding: 10px;
+    border-radius: 6px;
+    border-color: gray;
+    background-color: white;
+    margin-right: 10px;
+`
+const HomeCard = styled.div`
     display: flex;
-    font-family: 'Special Elite', cursive;
-    border: 4px solid black;
-    align-items: center;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 150%;
-    width: 320px;
+    flex-direction: row;
+    background-color: white;
+	padding: 20px;
+	margin-top: 50px;
+	margin-left: 200px;
+	margin-right: 200px;
 `
 
 export default Home;
+
+// {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
+// {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}

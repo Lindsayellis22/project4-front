@@ -5,7 +5,7 @@ function Nav(props) {
     return (
     <NavWrapper>
         <a href="#" className="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><a href="sass.html">Adoptable Pets</a></li>
             <li><a href="badges.html">My Pets</a></li>
         </ul>

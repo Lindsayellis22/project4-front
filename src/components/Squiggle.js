@@ -12,10 +12,10 @@ function Squiggle(props) {
             <Eye right></Eye>
             <Eye left></Eye>
             <Mouth></Mouth>
-            <RightLeg></RightLeg>
-            <LeftLeg></LeftLeg>
-            <MiddleLeg right></MiddleLeg> 
-            <MiddleLeg left></MiddleLeg>  
+            <RightLeg color={props.color}></RightLeg>
+            <LeftLeg color={props.color}></LeftLeg>
+            <MiddleLeg right color={props.color}></MiddleLeg> 
+            <MiddleLeg left color={props.color}></MiddleLeg>  
         </>
     );
 }
@@ -124,7 +124,7 @@ const Head = styled.div`
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: thistle;
+    background: ${props => props.color};
     top: 57%;
     right: 30%;
     transform: rotate(-20deg);
@@ -135,7 +135,7 @@ const Head = styled.div`
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: thistle;
+    background: ${props => props.color};
     top: 57%;
     left: 30%;
     transform: rotate(20deg);
@@ -146,7 +146,7 @@ const Head = styled.div`
     width: 100px;
     height: 150px;
     border-radius: 100px /50px;
-    background-color: thistle;
+    background: ${props => props.color};
     top: 59%;
     ${props => props.left && 'left: 51%;'}
     ${props => props.right && 'right: 51%;'}
