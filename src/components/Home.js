@@ -41,30 +41,26 @@ function Home(props) {
 }
 
 const TestHeading = styled.h1`
-    color: red
+    font-color: red
+    font-family: 'Special Elite', cursive;
 `
-const SpeciesCard = styled.div`
-    poition: relative;  
-    border: 4px solid rgb(204, 189, 189);
-	background-color: var(--transparent-grey);
-	margin: 1rem;
-	margin-top: 30px;
-	width: 91vw;
-	padding: 5px;
-	display: flex;
-	align-content: center;
-	flex-direction: column;
-	overflow-x: hidden;
-`
+
 const SpeciesList = styled.ul`
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	padding-left: 1rem;
+    display: grid;
+    margin: 0;
+    norder-radius: 5px;
+    padding: 20px;
+    font-size 150%
 `
 const SpeciesListItem = styled.li`
-    list-style-type: none;
+    display: flex;
+    font-family: 'Special Elite', cursive;
+    border: 4px solid black;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    width: 320px;
 `
 
 export default Home;

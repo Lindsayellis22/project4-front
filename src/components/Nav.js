@@ -1,16 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
 function Nav(props) {
     return (
-    <div className="nav-wrapper">
+    <NavWrapper>
         <a href="#" className="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Adoptable Pets</a></li>
             <li><a href="badges.html">My Pets</a></li>
-            {/* <li><a href="collapsible.html">JavaScript</a></li> */}
         </ul>
-    </div>
+    </NavWrapper>
     );
 }
 
 export default Nav;
+
+const NavWrapper = styled.div`
+font-family: 'Special Elite', cursive;
+`
