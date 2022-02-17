@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function Nav(props) {
     return (
     <NavWrapper>
+        <LinkHome to={'/'}>
         <NavTitle>L337Pets</NavTitle>
-        <NavList>
-            <li>My Pets</li>
-        </NavList>
+        </LinkHome>
+        <LinkAdopted to={'/pets'}>
+        <NavList><li>My Pets</li></NavList>
+        </LinkAdopted>
     </NavWrapper>
     );
 }
@@ -25,9 +28,17 @@ text-decoration: none;
 display: flex;
 font-size: 20px;
 `
+const LinkHome = styled(Link)`
+    text-decoration: none;
+`
+const LinkAdopted = styled(Link)`
+    text-decoration: none;
+`
 const NavTitle = styled.header`
 font-weight: bold;
 display: felx;
 flex-direction: row;
 font-size: 40px;
+text-decoration: none;
+
 `

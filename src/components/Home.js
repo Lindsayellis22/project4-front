@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js';
 import { Link } from 'react-router-dom';
 import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
-
+import Edgar from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Edgar.js';
 
 function Home(props) {   
     const [speciesList, setSpeciesList] = useState([]);
@@ -29,6 +29,7 @@ function Home(props) {
                         <StyledLink to={`/species/${species._id}`} key={species._id}>
                             <SpeciesListItem >
                                 <SpeciesContainer>
+                                {species.speciesName === 'Edgar Allen Poe' && <Edgar color={species.defaultColor} />}
                                     {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
                                     {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
                                 </SpeciesContainer>
@@ -45,6 +46,7 @@ const SpeciesContainer = styled.div`
     height: 200px;
     width: 200px;
     position: relative;
+
 `
 
 const TestHeading = styled.h1`

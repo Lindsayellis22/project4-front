@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import PetForm from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/PetForm.js'
 import { useParams } from 'react-router';
 import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
-
+import Edgar from './Edgar';
+import styled from 'styled-components';
 
 
 function CreatePet(props) {
@@ -30,16 +31,25 @@ function CreatePet(props) {
     
     return (
         <div>
-            <h1>hi</h1>
+            <SpeciesContainer>
             {speciesList._id === '620c2fa9d7fd58ae0f3c409e' && <Squiggle color={color} />}
             {speciesList._id === '620c2fa9d7fd58ae0f3c409f' && <Radclyf color={color} />}
+            {speciesList._id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={color} />}
+            </SpeciesContainer>
             <PetForm speciesId={id} setColor={setColor} />
-            {/* <ul>
-            {speciesList.map((speciesBio) => {
-                return <li> key={speciesBio.likes} {speciesBio.dislikes}</li>
-            })} 
-            </ul>    */}
-        </div>
+            Likes: {speciesList.likes}
+            Dislikes: {speciesList.dislikes}
+            Temperament: {speciesList.temperament}
+           </div> 
+
+
     )
-}
-export default CreatePet
+    }
+
+const SpeciesContainer = styled.div`
+    width: 300px;
+    height: 300px;
+`
+
+export default CreatePet;
+

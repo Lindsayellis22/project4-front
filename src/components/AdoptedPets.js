@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
 import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js';
+import Edgar from './Edgar';
 
 function AdoptedPets(props) {
     const [pet, setPet] = useState([]);
@@ -26,6 +27,7 @@ function AdoptedPets(props) {
         {pet.map(pets => (
                 <SpeciesListItem >
                     <PetsContainer>
+                        {pets.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pets.color} />}
                         {pets.species_id === '620c2fa9d7fd58ae0f3c409e' && <Squiggle color={pets.color} />}
                         {pets.species_id === '620c2fa9d7fd58ae0f3c409f' && <Radclyf color={pets.color} />}
                     </PetsContainer>
@@ -43,11 +45,6 @@ const PetsContainer = styled.div`
     height: 200px;
     width: 200px;
     position: relative;
-`
-
-const TestHeading = styled.h1`
-    color: #000814;
-    font-family: 'Special Elite', cursive;
 `
 const SpeciesList = styled.ul`
     display: flex;
