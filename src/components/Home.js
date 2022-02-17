@@ -29,7 +29,7 @@ function Home(props) {
                         <StyledLink to={`/species/${species._id}`} key={species._id}>
                             <SpeciesListItem >
                                 <SpeciesContainer>
-                                {species.speciesName === 'Edgar Allen Poe' && <Edgar color={species.defaultColor} />}
+                                    {species.speciesName === 'Edgar Allen Poe' && <Edgar color={species.defaultColor} />}
                                     {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
                                     {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
                                 </SpeciesContainer>
@@ -46,6 +46,7 @@ const SpeciesContainer = styled.div`
     height: 200px;
     width: 200px;
     position: relative;
+    
 
 `
 

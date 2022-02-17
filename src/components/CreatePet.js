@@ -31,11 +31,13 @@ function CreatePet(props) {
     
     return (
         <div>
+            <SpeciesCard>
             <SpeciesContainer>
             {speciesList._id === '620c2fa9d7fd58ae0f3c409e' && <Squiggle color={color} />}
             {speciesList._id === '620c2fa9d7fd58ae0f3c409f' && <Radclyf color={color} />}
             {speciesList._id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={color} />}
             </SpeciesContainer>
+            </SpeciesCard>
             <PetForm speciesId={id} setColor={setColor} />
             Likes: {speciesList.likes}
             Dislikes: {speciesList.dislikes}
@@ -47,9 +49,22 @@ function CreatePet(props) {
     }
 
 const SpeciesContainer = styled.div`
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
+    position: relative
 `
-
+const SpeciesCard = styled.div`
+padding: 10px;
+border-radius: 6px;
+border-color: gray;
+background-color: white;
+margin-right: 5px;
+margin-left: 5px;
+width: 700px;
+height: 700;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 export default CreatePet;
 

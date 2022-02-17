@@ -85,21 +85,47 @@ const Head = styled.div`
     top: 37%;
     ${props => props.left && 'left: 37%;'}
     ${props => props.right && 'right: 37%;'}
-    width: 5%;
+    width: 6%;
     height: 5%;
     background: black;
     border-radius: 50%;
-    border: white 12px solid;
+    border: white 7px solid;
     animation: blink 2.4s infinite;
     z-index: 3;
-  `
+    @keyframes blink {
+      93% {
+        transform: none;
+        animation-timing-function: ease-in;
+      }
+      93% {
+        transform: translateY(15px) scaleY(0)
+      }
+      100% {
+        animation-timing-function: ease-out;
+      }
+    }
+    @keyframes squeeze {
+      80% {
+        transform: none;
+        animation-timing-function: ease-in;
+      }
+      93% {
+        transform: translateY(3px) scaleY(0.8)
+      }
+      100% {
+        animation-timing-function: ease-out;
+      }
+    }
+    
+    le    
+`
   
   const Mouth = styled.div`
     position: absolute;
     top: 55%;
     right: 45%;
-    width: 10%;
-    height: 10%;
+    width: 8%;
+    height: 8%;
     border-bottom-left-radius: 500px;
     border-bottom-right-radius: 500px;
     background: pink;
@@ -108,33 +134,33 @@ const Head = styled.div`
   
   const RightLeg = styled.div`
     position: absolute;
-    width: 100px;
-    height: 150px;
+    width: 40px;
+    height: 70px;
     border-radius: 100px /50px;
     background: ${props => props.color};
-    top: 57%;
-    right: 30%;
+    top: 60%;
+    right: 35%;
     transform: rotate(-20deg);
   `
   
   const LeftLeg = styled.div`
     position: absolute;
-    width: 100px;
-    height: 150px;
+    width: 40px;
+    height: 70px;
     border-radius: 100px /50px;
     background: ${props => props.color};
-    top: 57%;
-    left: 30%;
+    top: 60%;
+    left: 35%;
     transform: rotate(20deg);
   `
   
   const MiddleLeg = styled.div`
     position: absolute;
-    width: 100px;
-    height: 150px;
+    width: 40px;
+    height: 70px;
     border-radius: 100px /50px;
     background: ${props => props.color};
-    top: 59%;
+    top: 65%;
     ${props => props.left && 'left: 51%;'}
     ${props => props.right && 'right: 51%;'}
   `

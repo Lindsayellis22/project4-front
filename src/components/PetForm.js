@@ -49,7 +49,7 @@ function PetForm(props) {
             placeholder='Pet Name'
           />
           <label>Choose a Color:</label>
-          <select value={props.color} id='color' onChange={handleChange}> 
+          <select value={props.color} id='color' placeholder='Color' onChange={handleChange}> 
             <option value='default' disabled hidden>
               Color 
             </option>
