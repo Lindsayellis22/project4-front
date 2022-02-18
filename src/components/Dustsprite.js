@@ -133,26 +133,26 @@ height: 5%;
 right: 48%;
 top: 37%
     `
-  const Mouth = styled.div`
-  position: absolute;
-  bottom: 47%;
-  right: 41%;
-  width: 7%;
-  height: 4%;
-  border-bottom-left-radius: 500px;
-  border-bottom-right-radius: 500px;
-  background: red;
-  z-index: 3;
-  `
-  const Nose = styled.div`
-  position: absolute;
-  height: 3%;
-  width: 5%;
-  border-radius: 40%;
-  background: black;
-  z-index: 100;
-   bottom: 53%;
-  right: 42%;
-  `
+const Mouth = styled.div`
+    position: absolute;
+    bottom: 47%;
+    right: 41%;
+    width: 7%;
+    height: 4%;
+    border-bottom-left-radius: 500px;
+    border-bottom-right-radius: 500px;
+    background: red;
+    z-index: 3;
+`
+const Nose = styled.div`
+    position: absolute;
+    height: 3%;
+    width: 5%;
+    border-radius: 40%;
+    background: black;
+    z-index: 100;
+    bottom: 53%;
+    right: 42%;
+`
 
 export default Dustsprite;

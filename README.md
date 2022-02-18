@@ -1,71 +1,44 @@
-# Getting Started with Create React App
+# L337 Pets
+l337 Pets is a react app built with an Express backend. L337 Pets is based on Neopets, a popular website that lets you adopt a pet. The pets are bult with pure CSS and allow the user to adopt, name, and update the color of their chosen pet.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Screenshots
 
-## Available Scripts
+![About Page](/Users/lindsayellis/SEI/projects/project4-frontend/src/assets/adopt.png)
+![Adopt Pets](/Users/lindsayellis/SEI/projects/project4-frontend/src/assets/home.png)
 
-In the project directory, you can run:
+## Wireframes
 
-### `npm start`
+![About Page](src/assets/8dc11400-8b23-11ec-9286-359696e6c747.jpg)
+![Adopt Pets](src/assets/8e59aa80-8b23-11ec-8965-3e75c2410a22.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Fork and clone down the repository to your machine.
+2. cd into the repo
+3. Open in VScode by running code . in your terminal
+4. Run npm i or npm install in your terminal
+5. Run npm start in your terminal
 
-### `npm test`
+## User Stories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### MVP
 
-### `npm run build`
+As a user, I want an app that renders in the browser
+As a user, I want to be able to log into my own account
+As a user, I want to be able to choose from 3 pets
+As a user, I want to choose the color of my pets
+As a user, I want to name my pet
+As a user, I want a bio about each pet
+As a user, I want to view my adopted pets
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stretch Goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As a user, I want to choose from more than 3 pets
+As a user, I want to interact with my pets in other ways, like feeding them
+As a user, I want my pets to be animated
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Major Hurdles
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# project4-front
+My biggest hurdle was working with pure CSS and getting my pets to render properly. I had to play around with the sizing and overall shape of the pets to get everything to look normal and not distorted. CSS can be very challenging to work with but I learned a lot.

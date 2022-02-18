@@ -37,3 +37,5 @@ const Overlay = styled.div`
     width: 100%;
     z-index: 1;
 `
+
+//Edgar Allen Poe photo from: https://www.nps.gov/people/edgarallanpoe.htm
