@@ -1,10 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav.js';
-import Home from './components/Home.js';
-import CreatePet from './components/CreatePet.js'
-import AdoptedPets from './components/AdoptedPets.js'
+import Nav from './Nav.js';
+import Home from './Home.js';
+import CreatePet from './CreatePet.js'
+import AdoptedPets from './AdoptedPets.js'
 import styled from 'styled-components';
+import GlobalStyle from './globalStyles.js'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Nav />
       </header>
       <Layout>
+        <GlobalStyle />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/species/:id' element={<CreatePet />} />
