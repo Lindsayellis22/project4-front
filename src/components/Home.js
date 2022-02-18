@@ -23,7 +23,8 @@ function Home(props) {
 
     return (
         <>
-                <Heading>Welcome to L337 Pets! Have you ever wanted your very own pet but can't afford the vet bills? Never fear, L337 Pets to the rescue! These cute little pets are free, clean, and loyal until the end (or until you set them free). Just click on a pet below to learn more about them and should you choose to adopt, give your pet a color and a name! Adopt as many pets as you want and view them in the "My Pets" tab. Enjoy! </Heading>
+                <Heading>Welcome to L337 Pets!</Heading>
+                <StyledP>Have you ever wanted your very own pet but can't afford the vet bills? Never fear, L337 Pets to the rescue! These cute little pets are free, clean, and loyal until the end (or until you set them free). Just click on a pet below to learn more about them and should you choose to adopt, give your pet a color and a name! Adopt as many pets as you want and view them in the "My Pets" tab. Enjoy!</StyledP>
                 <SpeciesList>
                     {speciesList.map(species => (
                         <StyledLink to={`/species/${species._id}`} key={species._id}>
@@ -49,9 +50,10 @@ const SpeciesContainer = styled.div`
 `
 const Heading = styled.h1`
     color: #000814;
-    font-family: 'Staatliches', cursive;
 `
 const SpeciesList = styled.ul`
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -59,6 +61,11 @@ const SpeciesList = styled.ul`
 const LinkText = styled.p`
     color: #000814;
 `
+
+const StyledP = styled.p`
+    font-size: 20px;
+`
+
 const StyledLink = styled(Link)`
     text-decoration: none;
 `

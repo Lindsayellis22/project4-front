@@ -31,16 +31,16 @@ function CreatePet(props) {
     return (
         <div>
             <PetForm speciesId={id} setColor={setColor} />
-                <SpeciesCard>
-                    <SpeciesContainer>
-                        {speciesList._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
-                        {speciesList._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
-                        {speciesList._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
-                        <PetBio>
-                            <LiItem>Likes: {speciesList.likes}</LiItem>
-                            <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
-                            <LiItem>Temperament: {speciesList.temperament}</LiItem>
-                        </PetBio>
+            <SpeciesCard>
+                <SpeciesContainer>
+                    {speciesList._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
+                    {speciesList._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
+                    {speciesList._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
+                    <PetBio>
+                        <LiItem>Likes: {speciesList.likes}</LiItem>
+                        <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
+                        <LiItem>Temperament: {speciesList.temperament}</LiItem>
+                    </PetBio>
                 </SpeciesContainer>
             </SpeciesCard>  
         </div> 
@@ -53,12 +53,10 @@ const SpeciesContainer = styled.div`
     position: relative
 `
 const SpeciesCard = styled.div`
-padding: 10px;
+    padding: 10px;
     border-radius: 6px;
     border-color: gray;
     background-color: white;
-    margin-right: 5px;
-    margin-left: 5px;
     width: 700px;
     height: 700;
     display: flex;
@@ -74,7 +72,7 @@ const LiItem = styled.li`
     float: right;
     display: table-cell;
     // vertical-align: middle;
-    font-size: 25px;
+    font-size: 20px;
 `
 
 const PetBio = styled.ul`
@@ -84,8 +82,6 @@ const PetBio = styled.ul`
     align-items: flex-start;
     vertical-align: top;
 `
-
-
 
 export default CreatePet;
 

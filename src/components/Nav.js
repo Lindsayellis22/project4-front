@@ -21,7 +21,7 @@ export default Nav;
 const NavWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Righteous', cursive;
 `
 const NavList = styled.ul`
     list-style-type: none;
