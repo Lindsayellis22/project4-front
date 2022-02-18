@@ -1,71 +1,85 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
 import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js';
 import Edgar from './Edgar';
 
 function AdoptedPets(props) {
-    const [pet, setPet] = useState([]);
+    const [pets, setPets] = useState([]);
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`https://hidden-everglades-11083.herokuapp.com/pets`)
             .then((res) => res.json())
             .then((res) => {
-                setPet(res);
+                setPets(res);
                 setLoading(false);
-                console.log(res)
             }).catch((err) => console.error(`Oops, something went wrong: ${err}`));
         },[]);
 
-        if (loading) {return <h1>Loading...</h1>};
+    if (loading) {return <h1>Loading...</h1>};
 
     return (
-        <SpeciesList>
-        {pet.map(pets => (
-                <SpeciesListItem >
-                    <PetsContainer>
-                        {pets.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pets.color} />}
-                        {pets.species_id === '620c2fa9d7fd58ae0f3c409e' && <Squiggle color={pets.color} />}
-                        {pets.species_id === '620c2fa9d7fd58ae0f3c409f' && <Radclyf color={pets.color} />}
-                    </PetsContainer>
-                    <DisplayPets>
-                        {pets.name}
-                    </DisplayPets>
-                </SpeciesListItem>
-        ))}
-    </SpeciesList>
-
-);
+        <>
+            <StyledTitle>My Pets</StyledTitle>
+            <PetsList>
+                {pets.map(pet => (
+                    <PetsListItem key={pet._id} >
+                        <PetsContainer>
+                            {pet.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pet.color} />}
+                            {pet.species_id === '620e79f32f4ae96d579ee873' && <Squiggle color={pet.color} />}
+                            {pet.species_id === '620e79f32f4ae96d579ee874' && <Radclyf color={pet.color} />}
+                            <StyledButton>Set Free</StyledButton>
+                        </PetsContainer>
+                        <DisplayPets>
+                            {pet.name}
+                        </DisplayPets>
+                    </PetsListItem>
+                ))}
+            </PetsList>
+        </>
+    );
 }
 
 const PetsContainer = styled.div`
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     position: relative;
 `
-const SpeciesList = styled.ul`
+const PetsList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 `
 const DisplayPets = styled.p`
     color: #000814;
 `
-const SpeciesListItem = styled.li`
+const PetsListItem = styled.li`
     padding: 10px;
     border-radius: 6px;
     border-color: gray;
     background-color: white;
     margin-right: 5px;
     margin-left: 5px;
-    width: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    margin-bottom: 5px;
 `
-    
-
+const StyledTitle = styled.h1`
+    margin-bottom: 25px;
+`
+const StyledButton = styled.button`
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #551a8b;
+  background-color: transparent;
+  border-color: #551a8b;
+  display: block;
+  font-size: 13px;
+  curser: pointer;
+  float: right;
+`
 export default AdoptedPets;

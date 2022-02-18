@@ -3,10 +3,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 
-const COLOR_ARRAY = ['aquamarine', 'cornflowerblue', 'lemonchiffon', 'hotpink', '	darkseagreen', 'lawngreen', 'salmon', 'violet', 'palevioletred', 'orange', 'navy', 'darkslategray'];
+const COLOR_ARRAY = ['aquamarine', 'cornflowerblue', 'tomato', 'transparent', 'thistle', 'lemonchiffon', 'hotpink', '	darkseagreen', 'lawngreen', 'salmon', 'violet', 'palevioletred', 'orange', 'navy', 'darkslategray'];
 
 const PetForm = (props) => {
-    let history = useNavigate();
+    let navigate = useNavigate();
     const [pet, setPet] = useState({
         name: '',
         color: '',
@@ -34,12 +34,12 @@ const PetForm = (props) => {
         .then((res) => {
             return res.json();
         })
-        .then((res) => history.push('/pets'));
+        .then(() => navigate('/pets'));
     }
 
     return (
-      <DivForm>
-        <form onSubmit={handleSubmit} className='create-form'>
+      <DivForm onSubmit={handleSubmit}>
+        <Field>
           <label htmlFor='name'>Name: </label>
           <input
             type='text'
@@ -48,34 +48,42 @@ const PetForm = (props) => {
             value={pet.name}
             placeholder='Pet Name'
           />
-          <label>Choose a Color:</label>
+        </Field>
+        <Field>
+          <label htmlFor='color'>Choose a Color: </label>
           <select value={props.color} id='color' placeholder='Color' onChange={handleChange}> 
-            <option value='default' disabled hidden>
+            <option value={'0'} disabled>
               Color 
             </option>
-              {COLOR_ARRAY.map((color) => {
-                return (
-            <option value={color} key={color}>{color}</option>
-                )
-              })}
+            {COLOR_ARRAY.map((color) => {
+              return (
+                <option value={color} key={color}>{color}</option>
+              )
+            })}
           </select>
-          <StyledButton type='submit'>Submit</StyledButton>
-        </form>
-    </DivForm>
+        </Field>
+        <StyledButton type='submit'>Submit</StyledButton>
+      </DivForm>
     );    
  }
 
-const DivForm = styled.div`
-  display: flex;
-  justify-content: flex-start;
+const DivForm = styled.form`
   padding-bottom: 25px;
+  font-size: 20px;
 `
 const StyledButton = styled.button`
   padding: 5px 10px;
   border-radius: 4px;
   color: white;
   background-color: #551a8b;
-
+  border-color: #551a8b;
+  display: block;
+  font-size: 20px;
+  curser: pointer;
+`
+const Field = styled.div`
+  display: block;
+  margin-bottom: 10px;
 `
 
 export default PetForm;

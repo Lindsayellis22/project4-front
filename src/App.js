@@ -26,7 +26,10 @@ function App() {
 }
 
 const Layout = styled.div`
-  padding: 24px 48px;
+  padding: 24px 100px;
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
 `
 
 export default App;

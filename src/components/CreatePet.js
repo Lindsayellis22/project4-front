@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 function CreatePet(props) {
     const { id } = useParams();
-    const [speciesList, setSpeciesList] = useState([]);
+    const [species, setspecies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState('');
 
@@ -18,29 +18,28 @@ function CreatePet(props) {
         fetch(`https://hidden-everglades-11083.herokuapp.com/species/${id}`)
             .then((res) => res.json())
             .then((res) => {
-                setSpeciesList(res);
+                setspecies(res);
                 setColor(res.defaultColor);
                 setLoading(false);
-                console.log(res)
             }).catch((err) => console.error(`Oops, something went wrong: ${err}`));
         },[id]);
         
-    if (loading) {return <h1>Loading...</h1>
+    if (loading) {
+        return <h1>Loading...</h1>
     };
-    
     return (
         <div>
-            <h1>{speciesList.speciesName}</h1>
+            <h1>{species.speciesName}</h1>
             <PetBio>
-                <LiItem>Likes: {speciesList.likes}</LiItem>
-                <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
-                <LiItem>Temperament: {speciesList.temperament}</LiItem>
+                <LiItem>Likes: {species.likes}</LiItem>
+                <LiItem>Dislikes: {species.dislikes}</LiItem>
+                <LiItem>Temperament: {species.temperament}</LiItem>
             </PetBio>
             <SpeciesCard>
                 <SpeciesContainer>
-                    {speciesList._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
-                    {speciesList._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
-                    {speciesList._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
+                    {species._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
+                    {species._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
+                    {species._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
                 </SpeciesContainer>
             </SpeciesCard> 
             <PetForm speciesId={id} setColor={setColor} /> 

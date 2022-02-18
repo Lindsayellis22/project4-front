@@ -23,29 +23,29 @@ function Home(props) {
 
     return (
         <>
-                <Heading>Welcome to L337 Pets!</Heading>
-                <StyledP>Have you ever wanted your very own pet but can't afford the vet bills? Never fear, L337 Pets to the rescue! These cute little pets are free, clean, and loyal until the end (or until you set them free). Just click on a pet below to learn more about them and should you choose to adopt, give your pet a color and a name! Adopt as many pets as you want and view them in the "My Pets" tab. Enjoy!</StyledP>
-                <SpeciesList>
-                    {speciesList.map(species => (
-                        <StyledLink to={`/species/${species._id}`} key={species._id}>
-                            <SpeciesListItem >
-                                <SpeciesContainer>
-                                    {species.speciesName === 'Edgar Allen Poe' && <Edgar color={species.defaultColor} />}
-                                    {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
-                                    {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
-                                </SpeciesContainer>
-                                <LinkText>{species.speciesName}</LinkText>
-                            </SpeciesListItem>
-                        </StyledLink>
-                    ))}
-                </SpeciesList>
+            <Heading>Welcome to L337 Pets!</Heading>
+            <StyledP>Have you ever wanted your very own pet but can't afford the vet bills? Never fear, L337 Pets to the rescue! These cute little pets are free, clean, and loyal until the end (or until you set them free). Just click on a pet below to learn more about them and should you choose to adopt, give your pet a color and a name! Adopt as many pets as you want and view them in the "My Pets" tab. Enjoy!</StyledP>
+            <SpeciesList>
+                {speciesList.map(species => (
+                    <StyledLink to={`/species/${species._id}`} key={species._id}>
+                        <SpeciesListItem >
+                            <SpeciesContainer>
+                                {species.speciesName === 'Edgar Allen Poe' && <Edgar color={species.defaultColor} />}
+                                {species.speciesName === 'Squiggle' && <Squiggle color={species.defaultColor} />}
+                                {species.speciesName === 'Radclyf' && <Radclyf color={species.defaultColor} />}
+                            </SpeciesContainer>
+                            <LinkText>{species.speciesName}</LinkText>
+                        </SpeciesListItem>
+                    </StyledLink>
+                ))}
+            </SpeciesList>
         </>
     );
 }
 
 const SpeciesContainer = styled.div`
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     position: relative;
 `
 const Heading = styled.h1`
@@ -76,7 +76,7 @@ const SpeciesListItem = styled.li`
     background-color: white;
     margin-right: 5px;
     margin-left: 5px;
-    width: 200px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
