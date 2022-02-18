@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Squiggle(props) {
     return (
-        <>
+        <StyledDiv>
             <Head color={props.color}></Head>
             <RightEar color={props.color}></RightEar>
             <LeftEar color={props.color}></LeftEar>
@@ -16,10 +16,15 @@ function Squiggle(props) {
             <LeftLeg color={props.color}></LeftLeg>
             <MiddleLeg right color={props.color}></MiddleLeg> 
             <MiddleLeg left color={props.color}></MiddleLeg>  
-        </>
+        </StyledDiv>
     );
 }
 
+const StyledDiv = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+`
 
 const Head = styled.div`
     position: absolute;

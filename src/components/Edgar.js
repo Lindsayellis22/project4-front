@@ -12,7 +12,6 @@ function Edgar(props) {
     );      
 };
 
-
 export default Edgar;
 
 const EdgarPic = styled.img`

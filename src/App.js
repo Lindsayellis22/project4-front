@@ -5,6 +5,8 @@ import Home from '/Users/lindsayellis/SEI/projects/project4-frontend/src/compone
 import CreatePet from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/CreatePet.js'
 import AdoptedPets from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/AdoptedPets.js'
 import GlobalStyles from '/Users/lindsayellis/SEI/projects/project4-frontend/src/globalStyles.js';
+import styled from 'styled-components';
+
 function App() {
   return (
     <div className="App">
@@ -12,13 +14,20 @@ function App() {
         <GlobalStyles />
         <Nav />
       </header>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/species/:id' element={<CreatePet />} />
-        <Route path='/pets' element={<AdoptedPets />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/species/:id' element={<CreatePet />} />
+          <Route path='/pets' element={<AdoptedPets />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }
 
+const Layout = styled.div`
+  padding: 24px 48px;
+`
+
 export default App;
+

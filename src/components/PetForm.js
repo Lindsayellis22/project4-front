@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-const COLOR_ARRAY = ['papayawhip', 'lemonchiffon', 'hotpink'];
+const COLOR_ARRAY = ['aquamarine', 'cornflowerblue', 'lemonchiffon', 'hotpink', '	darkseagreen', 'lawngreen', 'salmon', 'violet', 'palevioletred', 'orange', 'navy', 'darkslategray'];
 
 function PetForm(props) {
     const [pet, setPet] = useState({
@@ -22,7 +23,7 @@ function PetForm(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(pet)
-        fetch('http://localhost:3111/pets', {
+        fetch('https://hidden-everglades-11083.herokuapp.com/pets', {
           method: 'POST',
           body: JSON.stringify(pet),
           headers: {
@@ -38,7 +39,7 @@ function PetForm(props) {
     }
 
     return (
-      <div>
+      <DivForm>
         <form onSubmit={handleSubmit} className='create-form'>
           <label htmlFor='name'>Name: </label>
           <input
@@ -63,10 +64,14 @@ function PetForm(props) {
             <button type='submit'>Submit</button>
           
         </form>
-    </div>
+    </DivForm>
     );    
  }
 
-
+const DivForm = styled.div`
+display: flex;
+justify-content: flex-start;
+padding-bottom: 25px;
+`
 
 export default PetForm;

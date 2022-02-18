@@ -11,7 +11,7 @@ function AdoptedPets(props) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:3111/pets`)
+        fetch(`https://hidden-everglades-11083.herokuapp.com/pets`)
             .then((res) => res.json())
             .then((res) => {
                 setPet(res);

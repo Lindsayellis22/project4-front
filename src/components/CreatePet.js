@@ -7,7 +7,6 @@ import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/com
 import Edgar from './Edgar';
 import styled from 'styled-components';
 
-
 function CreatePet(props) {
     const { id } = useParams();
     const [speciesList, setSpeciesList] = useState([]);
@@ -16,7 +15,7 @@ function CreatePet(props) {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3111/species/${id}`)
+        fetch(`https://hidden-everglades-11083.herokuapp.com/species/${id}`)
             .then((res) => res.json())
             .then((res) => {
                 setSpeciesList(res);
@@ -31,22 +30,22 @@ function CreatePet(props) {
     
     return (
         <div>
-            <SpeciesCard>
-            <SpeciesContainer>
-            {speciesList._id === '620c2fa9d7fd58ae0f3c409e' && <Squiggle color={color} />}
-            {speciesList._id === '620c2fa9d7fd58ae0f3c409f' && <Radclyf color={color} />}
-            {speciesList._id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={color} />}
-            </SpeciesContainer>
-            </SpeciesCard>
             <PetForm speciesId={id} setColor={setColor} />
-            Likes: {speciesList.likes}
-            Dislikes: {speciesList.dislikes}
-            Temperament: {speciesList.temperament}
-           </div> 
-
-
+                <SpeciesCard>
+                    <SpeciesContainer>
+                        {speciesList._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
+                        {speciesList._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
+                        {speciesList._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
+                        <PetBio>
+                            <LiItem>Likes: {speciesList.likes}</LiItem>
+                            <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
+                            <LiItem>Temperament: {speciesList.temperament}</LiItem>
+                        </PetBio>
+                </SpeciesContainer>
+            </SpeciesCard>  
+        </div> 
     )
-    }
+}
 
 const SpeciesContainer = styled.div`
     width: 500px;
@@ -55,16 +54,38 @@ const SpeciesContainer = styled.div`
 `
 const SpeciesCard = styled.div`
 padding: 10px;
-border-radius: 6px;
-border-color: gray;
-background-color: white;
-margin-right: 5px;
-margin-left: 5px;
-width: 700px;
-height: 700;
-display: flex;
-flex-direction: column;
-align-items: center;
+    border-radius: 6px;
+    border-color: gray;
+    background-color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 700px;
+    height: 700;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
 `
+
+const LiItem = styled.li`
+    // display flex:
+    // flex-direction: column;
+    // text-align: center;
+    padding-bottom: 7px;
+    float: right;
+    display: table-cell;
+    // vertical-align: middle;
+    font-size: 25px;
+`
+
+const PetBio = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    vertical-align: top;
+`
+
+
+
 export default CreatePet;
 

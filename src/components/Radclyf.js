@@ -3,17 +3,22 @@ import styled from 'styled-components';
 
 function Radclyf(props) {
     return (
-        <>
+        <StyledDiv>
             <Head color={props.color}></Head>
             <Ear left color={props.color}></Ear>
             <Ear right color={props.color}></Ear>
             <Eye right></Eye>
             <Eye left></Eye>
             <Mouth></Mouth>   
-        </>
+        </StyledDiv>
     );
 }
 
+const StyledDiv = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+`
 
 const Head = styled.div`
     position: absolute;

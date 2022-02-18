@@ -11,7 +11,7 @@ function Home(props) {
     const [loading, setLoading] = useState(true);
     
     useEffect(() => { 
-        fetch('http://localhost:3111/species')
+        fetch('https://hidden-everglades-11083.herokuapp.com/species')
             .then((res) => res.json())
             .then((res) => {
                 setSpeciesList(res);
@@ -19,11 +19,11 @@ function Home(props) {
             }).catch((err) => console.error(`Oops, something went wrong: ${err}`));
     }, []);
       
-        if (loading) {return <h1>Loading...</h1>};
+    if (loading) {return <h1>Loading...</h1>};
 
     return (
-        <div>
-                <TestHeading>adopt pets!</TestHeading>
+        <>
+                <Heading>Welcome to L337 Pets! Have you ever wanted your very own pet but can't afford the vet bills? Never fear, L337 Pets to the rescue! These cute little pets are free, clean, and loyal until the end (or until you set them free). Just click on a pet below to learn more about them and should you choose to adopt, give your pet a color and a name! Adopt as many pets as you want and view them in the "My Pets" tab. Enjoy! </Heading>
                 <SpeciesList>
                     {speciesList.map(species => (
                         <StyledLink to={`/species/${species._id}`} key={species._id}>
@@ -38,7 +38,7 @@ function Home(props) {
                         </StyledLink>
                     ))}
                 </SpeciesList>
-        </div>
+        </>
     );
 }
 
@@ -46,13 +46,10 @@ const SpeciesContainer = styled.div`
     height: 200px;
     width: 200px;
     position: relative;
-    
-
 `
-
-const TestHeading = styled.h1`
+const Heading = styled.h1`
     color: #000814;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Staatliches', cursive;
 `
 const SpeciesList = styled.ul`
     display: flex;
