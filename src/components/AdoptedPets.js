@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Squiggle from './src/components/Squiggle.js';
-import Radclyf from './src/components/Radclyf.js';
+import Squiggle from './components/Squiggle.js';
+import Radclyf from './components/Radclyf.js';
 import Edgar from './Edgar';
 
 function AdoptedPets(props) {
