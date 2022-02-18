@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Squiggle from './Squiggle.js';
-import Radclyf from './Radclyf.js';
+import Squiggle from './Squiggle';
+import Radclyf from './Radclyf';
 import Edgar from './Edgar';
+import Dustsprite from './Dustsprite';
 
 function AdoptedPets(props) {
     const [pets, setPets] = useState([]);
@@ -20,7 +21,7 @@ function AdoptedPets(props) {
         },[]);
 
     if (loading) {return <h1>Loading...</h1>};
-
+console.log('hello')
     return (
         <>
             <StyledTitle>My Pets</StyledTitle>
@@ -31,6 +32,7 @@ function AdoptedPets(props) {
                             {pet.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee873' && <Squiggle color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee874' && <Radclyf color={pet.color} />}
+                            {pet.species_id === '620e79f32f4ae96d579ee876' && <Dustsprite color={pet.color} />}
                         </PetsContainer>
                         <DisplayPets>
                             {pet.name}
