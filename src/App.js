@@ -6,6 +6,7 @@ import CreatePet from './components/CreatePet.js'
 import AdoptedPets from './components/AdoptedPets.js'
 import styled from 'styled-components';
 import GlobalStyle from './globalStyles.js'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route path='/pets' element={<AdoptedPets />} />
         </Routes>
       </Layout>
+      <Footer>
+        <Footer />
+      </Footer>
     </div>
   );
 }
