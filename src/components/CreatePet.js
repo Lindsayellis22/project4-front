@@ -1,9 +1,9 @@
 import React from 'react';
-import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js'
+import Squiggle from './src/components/Squiggle.js';
 import { useEffect, useState } from 'react';
-import PetForm from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/PetForm.js'
+import PetForm from './src/components/PetForm.js'
 import { useParams } from 'react-router';
-import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
+import Radclyf from './src/components/Radclyf.js';
 import Edgar from './Edgar';
 import styled from 'styled-components';
 import Dustsprite from './Dustsprite';

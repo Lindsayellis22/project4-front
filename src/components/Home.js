@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import Radclyf from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Radclyf.js';
+import Radclyf from './src/components/Radclyf.js';
 import { Link } from 'react-router-dom';
-import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
-import Edgar from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Edgar.js';
-import Dustsprite from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Dustsprite.js';
+import Squiggle from './src/components/Squiggle.js'
+import Edgar from './src/components/Edgar.js';
+import Dustsprite from './src/components/Dustsprite.js';
 
 function Home(props) {   
     const [speciesList, setSpeciesList] = useState([]);
