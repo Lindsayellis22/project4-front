@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Squiggle from './Squiggle.js';
 import Edgar from './Edgar.js';
 import Dustsprite from './Dustsprite.js';
+import Footer from './Footer';
+
 
 function Home(props) {   
     const [speciesList, setSpeciesList] = useState([]);
@@ -41,9 +43,12 @@ function Home(props) {
                     </StyledLink>
                 ))}
             </SpeciesList>
+            <Footer />
         </>
     );
 }
+
+// https://codepen.io/ashleynolan/pen/mdxBpZ helped me create my pets
 
 const SpeciesContainer = styled.div`
     height: 300px;
