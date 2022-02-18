@@ -18,6 +18,8 @@ function Nav(props) {
     );
 }
 
+// logo code from https://animate.style/
+
 export default Nav;
 
 const NavWrapper = styled.nav`

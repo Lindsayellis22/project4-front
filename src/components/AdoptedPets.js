@@ -21,7 +21,7 @@ function AdoptedPets(props) {
         },[]);
 
     if (loading) {return <h1>Loading...</h1>};
-console.log('hello')
+
     return (
         <>
             <StyledTitle>My Pets</StyledTitle>
