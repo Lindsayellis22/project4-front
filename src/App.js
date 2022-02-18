@@ -1,9 +1,9 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Nav from './Nav.js';
-import Home from './Home.js';
-import CreatePet from './CreatePet.js'
-import AdoptedPets from './AdoptedPets.js'
+import Nav from './components/Nav.js';
+import Home from './components/Home.js';
+import CreatePet from './components/CreatePet.js'
+import AdoptedPets from './components/AdoptedPets.js'
 import styled from 'styled-components';
 import GlobalStyle from './globalStyles.js'
 
