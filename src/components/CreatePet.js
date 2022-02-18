@@ -6,10 +6,11 @@ import { useParams } from 'react-router';
 import Squiggle from '/Users/lindsayellis/SEI/projects/project4-frontend/src/components/Squiggle.js'
 import Edgar from './Edgar';
 import styled from 'styled-components';
+import Dustsprite from './Dustsprite';
 
 function CreatePet(props) {
     const { id } = useParams();
-    const [species, setspecies] = useState([]);
+    const [species, setSpecies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState('');
 
@@ -18,7 +19,7 @@ function CreatePet(props) {
         fetch(`https://hidden-everglades-11083.herokuapp.com/species/${id}`)
             .then((res) => res.json())
             .then((res) => {
-                setspecies(res);
+                setSpecies(res);
                 setColor(res.defaultColor);
                 setLoading(false);
             }).catch((err) => console.error(`Oops, something went wrong: ${err}`));
@@ -40,6 +41,7 @@ function CreatePet(props) {
                     {species._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
                     {species._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
                     {species._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
+                    {species._id === '620e79f32f4ae96d579ee876' && <Dustsprite color={color} />}
                 </SpeciesContainer>
             </SpeciesCard> 
             <PetForm speciesId={id} setColor={setColor} /> 

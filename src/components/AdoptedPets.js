@@ -8,6 +8,7 @@ import Edgar from './Edgar';
 function AdoptedPets(props) {
     const [pets, setPets] = useState([]);
     const [loading, setLoading] = useState(true)
+    
 
     useEffect(() => {
         fetch(`https://hidden-everglades-11083.herokuapp.com/pets`)
@@ -30,7 +31,6 @@ function AdoptedPets(props) {
                             {pet.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee873' && <Squiggle color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee874' && <Radclyf color={pet.color} />}
-                            <StyledButton>Set Free</StyledButton>
                         </PetsContainer>
                         <DisplayPets>
                             {pet.name}
@@ -71,15 +71,5 @@ const PetsListItem = styled.li`
 const StyledTitle = styled.h1`
     margin-bottom: 25px;
 `
-const StyledButton = styled.button`
-  padding: 5px 10px;
-  border-radius: 4px;
-  color: #551a8b;
-  background-color: transparent;
-  border-color: #551a8b;
-  display: block;
-  font-size: 13px;
-  curser: pointer;
-  float: right;
-`
+
 export default AdoptedPets;
