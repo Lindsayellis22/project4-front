@@ -29,7 +29,7 @@ function AdoptedPets(props) {
                 {pets.map(pet => (
                     <PetsListItem key={pet._id} >
                         <PetsContainer>
-                            {pet.species_id === '620c2fa9d7fd58ae0f3c40a0' && <Edgar color={pet.color} />}
+                            {pet.species_id === '620e79f32f4ae96d579ee875' && <Edgar color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee873' && <Squiggle color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee874' && <Radclyf color={pet.color} />}
                             {pet.species_id === '620e79f32f4ae96d579ee876' && <Dustsprite color={pet.color} />}
