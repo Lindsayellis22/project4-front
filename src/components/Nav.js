@@ -5,14 +5,14 @@ import 'animate.css';
 
 function Nav(props) {
     return (
-    <NavWrapper>
-        <LinkHome to={'/'}>
-            <NavTitle><h1 class="animate__animated animate__wobble">L337Pets</h1></NavTitle>
-        </LinkHome>
-        <LinkAdopted to={'/pets'}>
-            <NavList><li>My Pets</li></NavList>
-        </LinkAdopted>
-    </NavWrapper>
+        <NavWrapper>
+            <LinkHome to={'/'}>
+                <NavTitle><h1 class="animate__animated animate__wobble">L337Pets</h1></NavTitle>
+            </LinkHome>
+            <LinkAdopted to={'/pets'}>
+                <NavList><li>My Pets</li></NavList>
+            </LinkAdopted>
+        </NavWrapper>
     );
 }
 

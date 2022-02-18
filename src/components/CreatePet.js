@@ -30,57 +30,47 @@ function CreatePet(props) {
     
     return (
         <div>
-            <PetForm speciesId={id} setColor={setColor} />
+            <h1>{speciesList.speciesName}</h1>
+            <PetBio>
+                <LiItem>Likes: {speciesList.likes}</LiItem>
+                <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
+                <LiItem>Temperament: {speciesList.temperament}</LiItem>
+            </PetBio>
             <SpeciesCard>
                 <SpeciesContainer>
                     {speciesList._id === '620e79f32f4ae96d579ee873' && <Squiggle color={color} />}
                     {speciesList._id === '620e79f32f4ae96d579ee874' && <Radclyf color={color} />}
                     {speciesList._id === '620e79f32f4ae96d579ee875' && <Edgar color={color} />}
-                    <PetBio>
-                        <LiItem>Likes: {speciesList.likes}</LiItem>
-                        <LiItem>Dislikes: {speciesList.dislikes}</LiItem>
-                        <LiItem>Temperament: {speciesList.temperament}</LiItem>
-                    </PetBio>
                 </SpeciesContainer>
-            </SpeciesCard>  
+            </SpeciesCard> 
+            <PetForm speciesId={id} setColor={setColor} /> 
         </div> 
     )
 }
 
 const SpeciesContainer = styled.div`
-    width: 500px;
-    height: 500px;
-    position: relative
+    height: 100%;
+    width: 100%;
 `
 const SpeciesCard = styled.div`
     padding: 10px;
     border-radius: 6px;
     border-color: gray;
     background-color: white;
-    width: 700px;
-    height: 700;
+    width: 300px;
+    height: 300px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 20px;
 `
 
 const LiItem = styled.li`
-    // display flex:
-    // flex-direction: column;
-    // text-align: center;
-    padding-bottom: 7px;
-    float: right;
-    display: table-cell;
-    // vertical-align: middle;
     font-size: 20px;
 `
 
 const PetBio = styled.ul`
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    vertical-align: top;
+    padding: 0;
 `
 
 export default CreatePet;

@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useNavigate } from "react-router-dom";
 
 const COLOR_ARRAY = ['aquamarine', 'cornflowerblue', 'lemonchiffon', 'hotpink', '	darkseagreen', 'lawngreen', 'salmon', 'violet', 'palevioletred', 'orange', 'navy', 'darkslategray'];
 
-function PetForm(props) {
+const PetForm = (props) => {
+    let history = useNavigate();
     const [pet, setPet] = useState({
         name: '',
         color: '',
@@ -13,16 +14,15 @@ function PetForm(props) {
     });
 
     const handleChange = (event) => {
-		event.preventDefault();
-		setPet({ ...pet, [event.target.id]: event.target.value });
-        if (event.target.id === 'color') {
-            props.setColor(event.target.value);
-        };
-	  };
+      event.preventDefault();
+      setPet({ ...pet, [event.target.id]: event.target.value });
+      if (event.target.id === 'color') {
+          props.setColor(event.target.value);
+      };
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(pet)
         fetch('https://hidden-everglades-11083.herokuapp.com/pets', {
           method: 'POST',
           body: JSON.stringify(pet),
@@ -32,10 +32,9 @@ function PetForm(props) {
           },
         })
         .then((res) => {
-            console.log(res);
             return res.json();
         })
-        .then((res) => console.log(res));
+        .then((res) => history.push('/pets'));
     }
 
     return (
@@ -60,18 +59,23 @@ function PetForm(props) {
                 )
               })}
           </select>
-          {/* <Link to={'/pets'}> */}
-            <button type='submit'>Submit</button>
-          
+          <StyledButton type='submit'>Submit</StyledButton>
         </form>
     </DivForm>
     );    
  }
 
 const DivForm = styled.div`
-display: flex;
-justify-content: flex-start;
-padding-bottom: 25px;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 25px;
+`
+const StyledButton = styled.button`
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  background-color: #551a8b;
+
 `
 
 export default PetForm;
