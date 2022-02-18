@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import Radclyf from './components/Radclyf.js';
 import { Link } from 'react-router-dom';
-import Squiggle from './components/Squiggle.js'
+import Squiggle from './components/Squiggle.js';
 import Edgar from './components/Edgar.js';
 import Dustsprite from './components/Dustsprite.js';
 
