@@ -39,3 +39,5 @@ const Overlay = styled.div`
 `
 
 //Edgar Allen Poe photo from: https://www.nps.gov/people/edgarallanpoe.htm
+// used stackoverflow for overlay help
+// https://stackoverflow.com/questions/17859993/basic-css-how-to-overlay-a-div-with-semi-transparent-div-on-top

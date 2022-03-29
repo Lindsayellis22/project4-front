@@ -113,25 +113,25 @@ animation: blink 2.4s infinite;
     `
   
 const LeftCheek = styled.div`
-position: absolute;
-border-radius: 50%;
-background: pink;
-z-index: 3;
-width: 9%;
-height: 5%;
-left: 60%;
-top: 37%
+    position: absolute;
+    border-radius: 50%;
+    background: pink;
+    z-index: 3;
+    width: 9%;
+    height: 5%;
+    left: 60%;
+    top: 37%
     `
   
 const RightCheek = styled.div`
-position: absolute;
-border-radius: 50%;
-background: pink;
-z-index: 3;
-width: 9%;
-height: 5%;
-right: 48%;
-top: 37%
+    position: absolute;
+    border-radius: 50%;
+    background: pink;
+    z-index: 3;
+    width: 9%;
+    height: 5%;
+    right: 48%;
+    top: 37%
     `
 const Mouth = styled.div`
     position: absolute;
