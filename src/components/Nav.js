@@ -40,8 +40,10 @@ const NavList = styled.ul`
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
+    &:hover {
+      color: #000814;
+    }
 `
-
 const NavTitle = styled.li`
     font-size: 30px;
     margin-right: 60px;

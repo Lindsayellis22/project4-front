@@ -7,8 +7,7 @@ function Edgar(props) {
         <StyledDiv>
             <Overlay color={props.color}></Overlay>
             <EdgarPic img src={Poe} alt='hiii' />
-        </StyledDiv>
-            
+        </StyledDiv>   
     );      
 };
 

@@ -35,42 +35,42 @@ position: absolute;
 `
   
 const RightEye = styled.div`
-position: absolute;
-background: black;
-border-radius: 50%;
-top: 25%;
-right: 32%;
-width: 5%;
-height: 7%;
-z-index: 3;
-border: white 6px solid;
-animation: blink 2.4s infinite;
-    @keyframes blink {
-        93% {
-          transform: none;
-          animation-timing-function: ease-in;
+  position: absolute;
+  background: black;
+  border-radius: 50%;
+  top: 25%;
+  right: 32%;
+  width: 5%;
+  height: 7%;
+  z-index: 3;
+  border: white 6px solid;
+  animation: blink 2.4s infinite;
+      @keyframes blink {
+          93% {
+            transform: none;
+            animation-timing-function: ease-in;
+          }
+          93% {
+            transform: translateY(15px) scaleY(0)
+          }
+          100% {
+            animation-timing-function: ease-out;
+          }
         }
-        93% {
-          transform: translateY(15px) scaleY(0)
+        @keyframes squeeze {
+          80% {
+            transform: none;
+            animation-timing-function: ease-in;
+          }
+          93% {
+            transform: translateY(3px) scaleY(0.8)
+          }
+          100% {
+            animation-timing-function: ease-out;
+          }
         }
-        100% {
-          animation-timing-function: ease-out;
-        }
-      }
-      @keyframes squeeze {
-        80% {
-          transform: none;
-          animation-timing-function: ease-in;
-        }
-        93% {
-          transform: translateY(3px) scaleY(0.8)
-        }
-        100% {
-          animation-timing-function: ease-out;
-        }
-      }
-      
-      le    
+        
+        le    
 `
   
   const LeftEye = styled.div`
