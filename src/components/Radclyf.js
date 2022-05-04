@@ -1,52 +1,52 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 function Radclyf(props) {
-    return (
-        <StyledDiv>
-            <Head color={props.color}></Head>
-            <Ear left color={props.color}></Ear>
-            <Ear right color={props.color}></Ear>
-            <Eye right></Eye>
-            <Eye left></Eye>
-            <Mouth></Mouth>   
-        </StyledDiv>
-    );
+  return (
+    <StyledDiv>
+      <Head color={props.color}></Head>
+      <Ear left color={props.color}></Ear>
+      <Ear right color={props.color}></Ear>
+      <Eye right></Eye>
+      <Eye left></Eye>
+      <Mouth></Mouth>
+    </StyledDiv>
+  );
 }
 
 const StyledDiv = styled.div`
-    position: relative;
-    height: 100%;
-    width: 100%;
-`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
 
 const Head = styled.div`
-    position: absolute;
-    top: 16%;
-    left: 25%;
-    width: 50%;
-    height: 60%;
-    background: ${props => props.color};
-    border-radius: 50%;
-    z-index: 3;
-`
+  position: absolute;
+  top: 16%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: ${(props) => props.color};
+  border-radius: 50%;
+  z-index: 3;
+`;
 
 const Ear = styled.div`
-    position: absolute;
-    top: 4%;
-    ${props => props.left && 'left: 18%;'}
-    ${props => props.right && 'right: 18%;'}
+  position: absolute;
+  top: 4%;
+  ${(props) => props.left && "left: 18%;"}
+  ${(props) => props.right && "right: 18%;"}
     width: 15%;
-    height: 30%;
-    background: ${props => props.color};
-    border-radius: 40%;
-    z-index: 1;
-`
+  height: 30%;
+  background: ${(props) => props.color};
+  border-radius: 40%;
+  z-index: 1;
+`;
 const Eye = styled.div`
     position: absolute;
     top: 37%;
-    ${props => props.left && 'left: 35%;'}
-    ${props => props.right && 'right: 35%;'}
+    ${(props) => props.left && "left: 35%;"}
+    ${(props) => props.right && "right: 35%;"}
     width: 8%;
     height: 10%;
     background: black;
@@ -80,10 +80,10 @@ const Eye = styled.div`
       }
       
       le    
-`
+`;
 
 const Mouth = styled.div`
-position: absolute;
+  position: absolute;
   top: 60%;
   right: 46%;
   width: 8%;
@@ -92,6 +92,6 @@ position: absolute;
   border-bottom-right-radius: 500px;
   background: red;
   z-index: 3;
-`
+`;
 
 export default Radclyf;

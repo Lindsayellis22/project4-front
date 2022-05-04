@@ -1,4 +1,5 @@
 # L337 Pets
+
 l337 Pets is a react app built with an Express backend. L337 Pets is based on Neopets, a popular website that lets you adopt a pet. The pets are bult with pure CSS and allow the user to adopt, name, and update the color of their chosen pet.
 
 ## App Screenshots
@@ -31,13 +32,11 @@ As a user, I want to name my pet
 As a user, I want a bio about each pet
 As a user, I want to view my adopted pets
 
-
 ### Stretch Goals
 
 As a user, I want to choose from more than 3 pets
 As a user, I want to interact with my pets in other ways, like feeding them
 As a user, I want my pets to be animated
-
 
 ### Major Hurdles
 
